@@ -52,9 +52,21 @@ title_tag = head_tag.contents[0]
 # for i in links.parents:
 #     print(i.name)
 
-# GOING SIDEWAYS
-    # NEXT SIBLING param
-sibling_soup = BeautifulSoup("<a><b>text1</b><c>text2</c></b></a>", 'html.parser')
+#  GOING SIDEWAYS
+#      NEXT SIBLING and PREVIOUS SIBLING param
+# sibling_soup = BeautifulSoup("<a><b>text1</b><c>text2</c></b></a>", 'html.parser')
 # print(sibling_soup.prettify())
-print(sibling_soup.b.next_sibling)
-print(sibling_soup.c.previous_sibling)
+# print(sibling_soup.b.next_sibling)
+# print(sibling_soup.c.previous_sibling)
+# for i in soup.a.next_siblings:
+#     print(i)
+
+# GOING BACK AND FORTH
+    # NEXT ELEMENT and PREVIOUS ELEMENT param
+# last_a_tag = soup.find("a", id="link3")
+# print(last_a_tag.next_element)
+
+# last_p_tag = soup.find("p")
+# print(last_p_tag.next_element)
+
+# print(last_a_tag.previous_element)
