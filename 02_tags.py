@@ -12,3 +12,6 @@ tag.name = 'g'
 print(tag.name)
 tag['class'] = "container"
 print(tag.get_attribute_list('class'))
+new_tag = soup.find_all('b')
+for i in new_tag:
+    print(i.get_attribute_list('class'))

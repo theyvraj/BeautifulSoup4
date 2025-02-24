@@ -25,3 +25,4 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 tag = soup.find_all('a')
 for i in tag:
     print(i.get_attribute_list('href'))
+    print(i)
