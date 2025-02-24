@@ -15,9 +15,13 @@ and they lived at the bottom of a well.</p>
 <p class="story">...</p>
 """
 soup = BeautifulSoup(html_doc, 'html.parser')
-print(soup.title.string)
-print(soup.p)
-print(soup.title.parent.name)
-print(soup.find_all('p'))
-for i in soup.find_all('a'):
-    print(i.get('href'))
+# print(soup.title.string)
+# print(soup.p)
+# print(soup.title.parent.name)
+# print(soup.find_all('p'))
+# for i in soup.find_all('a'):
+#     print(i.get('href'))
+
+tag = soup.find_all('a')
+for i in tag:
+    print(i.get_attribute_list('href'))
