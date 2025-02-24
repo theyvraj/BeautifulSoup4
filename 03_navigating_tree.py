@@ -19,18 +19,42 @@ soup = BeautifulSoup(html_doc, 'html.parser')
 #     print(a)
 
 # CONTENTS param
-
+links = soup.find('a')
 head_tag = soup.head
 title_tag = head_tag.contents[0]
-print(title_tag.contents[0])
-print(head_tag.contents[0].contents[0])
+# print(title_tag.contents[0])
+# print(head_tag.contents[0].contents[0])
 
-# CHILDREN param
+# GOING DOWN
+#      CHILDREN param
 
-for i in title_tag.children:
-    print(i)
+# for i in title_tag.children:
+#     print(i)
 
-# DESCENDANTS param
+#      DESCENDANT param
+# for i in head_tag.descendants:
+#     print(i)
 
-for i in head_tag.descendants:
-    print(i)
+#      STRING param
+# for i in soup.strings:
+#     print(i)
+
+#     # STRIPPED STRING param
+
+# for i in soup.stripped_strings:
+#     print(i)
+
+# GOING UP
+#      PARENT param
+# print(title_tag.parents)
+
+#     # PARENTS param
+# for i in links.parents:
+#     print(i.name)
+
+# GOING SIDEWAYS
+    # NEXT SIBLING param
+sibling_soup = BeautifulSoup("<a><b>text1</b><c>text2</c></b></a>", 'html.parser')
+# print(sibling_soup.prettify())
+print(sibling_soup.b.next_sibling)
+print(sibling_soup.c.previous_sibling)
