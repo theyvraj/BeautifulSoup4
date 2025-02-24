@@ -52,4 +52,10 @@ soup = BeautifulSoup('<b class="boldest">Extremely bold</b>', 'html.parser')
 # new_tag = str(new_tag)
 # print(type(new_tag))
 
-# 
+# HTML GENERATION
+
+main_doc = BeautifulSoup('<document><content/>INSERT FOOTER HERE</document', 'xml')
+
+footer = BeautifulSoup('<footer>2022 My Website. All rights reserved.</footer>', 'xml')
+main_doc.find(string='INSERT FOOTER HERE').replace_with(footer)
+print(main_doc)
